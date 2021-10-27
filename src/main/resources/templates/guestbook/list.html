@@ -81,7 +81,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title">Modal title</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">&times;&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -96,7 +96,7 @@
 
         <script th:inline="javascript">
 
-            var msg = [[${msg}]];
+            const msg = [[${msg}]];
 
             console.log(msg);
 
@@ -104,11 +104,12 @@
                 $(".modal").modal();
             }
 
-            var searchForm = ${"#searchForm"};
-            ${'.btn-search'}.click(function(e){
+            const searchForm = $("#searchForm");
+
+            $('.btn-search').click(function(e){
                 searchForm.submit();
             });
-            ${'.btn-clear'}.click(function (e){
+            $('.btn-clear').click(function (e){
                 searchForm.empty().submit();
             });
 
